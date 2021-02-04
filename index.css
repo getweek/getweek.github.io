@@ -30,6 +30,10 @@ main {
   text-align: center;
 }
 
+.policy {
+  width: 600px;
+}
+
 .screenshot {
   width: 60%;
 }
