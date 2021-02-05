@@ -37,3 +37,13 @@ main {
 .screenshot {
   width: 60%;
 }
+
+@media (max-width: 900px) {
+  .screenshot {
+    width: 100%;
+  }
+
+  .policy {
+    width: 100%
+  }
+}
