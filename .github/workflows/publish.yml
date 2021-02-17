@@ -1,4 +1,4 @@
-name: Jekyll site CI
+name: Publish
 
 on:
   push:
@@ -22,4 +22,5 @@ jobs:
       with:
         build_dir: dist
         branch: gh-pages
+        cname: getweek.pro
 
