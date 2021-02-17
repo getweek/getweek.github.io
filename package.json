@@ -1,0 +1,27 @@
+{
+  "name": "getweek.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.pug",
+    "build": "parcel build src/index.pug",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getweek/getweek.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/getweek/getweek.github.io/issues"
+  },
+  "homepage": "https://github.com/getweek/getweek.github.io#readme",
+  "dependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "devDependencies": {
+    "pug": "^3.0.0"
+  }
+}
