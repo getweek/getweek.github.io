@@ -1,0 +1,24 @@
+name: Jekyll site CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: npm run build
+    - name: GH Pages deploy
+      uses: Cecilapp/GitHub-Pages-deploy@3.1.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        build_dir: dist
+
