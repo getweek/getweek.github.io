@@ -60,9 +60,22 @@ main .logo h1 {
 h1.tagline {
   font-size: 36px;
   text-align: center;
-  margin: 80px 0 100px;
+  margin: 40px 0 40px;
 }
 
+.call-to-action {
+  margin: 10px 0 60px;
+  text-align: center;
+}
+
+.call-to-action button {
+  padding: 10px 30px;
+  font-size: 24px;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  color: #fff;
+  background-color: #03a9f4;
+}
 
 img.screenshot {
   width: 80%;
