@@ -1,14 +1,14 @@
 extends layout
 
 block content
-  main
-    h1 Week
-    p Week is a task management tool with heavy focus on planning.
-    h2
-      a(href="https://app.getweek.pro") Try it!
+  section
+    .logo
+      img(src="images/logo-big.svg")
+      h1 Week
+    h1.tagline Task management tool<br/> with heavy focus on planning
   img.screenshot(src="week app.png")
 
-  main
+  section
     .features
       .feature
         h2 Organize tasks in projects
@@ -21,6 +21,3 @@ block content
       .feature
         h2 Move tasks to calendar to plan them
         img(src="drop.png")
-
-    .subscription
-      script(src="//web.webformscr.com/apps/fc3/build/loader.js", sp-form-id="5d2fcc95e5bd3a6ac64bd9dfa38b4cc851f2a91efa524ad88545b498ed30772f")
