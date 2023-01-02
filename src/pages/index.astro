@@ -1,0 +1,342 @@
+---
+---
+<style>
+	body {
+		text-align: center;
+		font-family: 'Open Sans', sans-serif;
+		padding: 0 0 120px;
+	}
+
+	header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 24px;
+		padding: 0 20px;
+	}
+
+	header h1 {
+		font-size: 20px;
+		gap: 8px;
+	}
+
+	header nav {
+		display: flex;
+		align-items: center;
+		gap: 24px;
+	}
+
+	a {
+		color: #028dff;
+		text-decoration: none;
+	}
+	
+	h1 {
+		font-weight: 700;
+		font-size: 36px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 16px;
+	}
+
+	h2 {
+	}
+
+	h3 {
+		margin: 0;
+		font-size: 16px;
+		font-weight: 900;
+	}
+
+	.screenshots {
+		position: relative;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.screen {
+		margin-top: 48px;
+		width: 100%;
+		max-width: 1200px;
+		border: 1px solid #cecece;
+		border-radius: 3px;
+	}
+
+	.task-info {
+		width: 450px;
+		position: absolute;
+		right: 0;
+		bottom: 20px;
+	}
+
+	@media(max-width: 700px) {
+		.task-info {
+			display: none;
+		}
+	}
+
+	.features {
+		width: 90%;
+		max-width: 1200px;
+		margin: 24px auto;
+		display: flex;
+		gap: 16px;
+		flex-wrap: wrap;
+	}
+
+	.feature {
+		flex: 1 1 300px;
+		border-radius: 4px;
+		text-align: left;
+		border: 1px solid #d8d8d8;
+		box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.09);
+	}
+
+	.feature p {
+		font-size: 14px;
+	}
+
+	.background {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 160px;
+	}
+
+	.background-1 {
+		background: #d8ffcb5e;
+	}
+
+	.background-2 {
+		background: #cbfeff5e;
+	}
+	
+	.background-3 {
+		background: #f9ffcb5e;
+	}
+	
+	.background-4 {
+		background: #ffcbd35e;
+	}
+	
+	.background-5 {
+		background: #f2cbff5e;
+	}
+	
+	.background-6 {
+		background: #cbdaff5e;
+	}
+
+	.content {
+		padding: 16px;
+	}
+
+	.plans {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 16px;
+	}
+
+	.plan {
+		flex: 0 0 250px;
+		border: 1px solid #d8d8d8;
+		box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.09);
+	}
+
+	.plan h3 {
+		font-size: 24px;
+		border-bottom: 1px solid #eee;
+		margin-bottom: 24px;
+	}
+
+	.plan h4 {
+		font-size: 36px;
+		position: relative;
+	}
+
+	.plan h4 > span {
+		position: absolute;
+		top: 20px;
+		font-size: 16px;
+		opacity: 0.7;
+	}
+
+	.plan ul {
+		text-align: left;
+		margin: 10px 0 20px;
+		padding: 0 16px;
+	}
+
+	.plan ul li {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.plan ul li + li {
+		margin-top: 5px;
+	}
+
+	.plan li span:nth-child(2) {
+		color: #028dff;
+	}
+
+	.plan-pro li span:nth-child(2) {
+		color: #21a821;
+	}
+
+	.plan footer {
+		margin-bottom: 16px;
+		font-weight: 600;
+	}
+
+
+</style>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+		<title>Week</title>
+	</head>
+	<body>
+		<header>
+			<h1>
+				<img class="logo" src="/week.svg" width="24" height="24" />
+				Week
+			</h1>
+			<nav>
+				<a href="https://twitter.com/week_pro">
+					<img src="/twitter.svg" style="margin-top: 4px;" />
+				</a>
+				<!-- <a href="/privacy">Changelog</a> -->
+				<a href="/privacy">Privacy policy</a>
+			</nav>
+			
+		</header>
+		<h1>
+			<img src="/week.svg" width="48" height="48" />
+			Week
+		</h1>
+		<h2>Task management tool<br /> with a heavy focus on planning</h2>
+		<section class="screenshots">
+			<img class="screen" src="/main-screen.png" />
+			<img class="task-info" src="/task-info.png" />
+		</section>
+		<h2>Features</h2>
+		<section class="features">
+			<div class="feature">
+				<div class="background background-1">
+					<img src="/my-day.svg" />
+				</div>
+				<div class="content">
+					<h3>My Day</h3>
+					<p>Place where you can see all of your tasks that are due or scheduled for the selected day. You can also send tasks to My Day page manually to keep an eye on them.</p>
+				</div>
+			</div>
+			<div class="feature">
+				<div class="background background-2">
+					<img src="/tags.svg" />
+				</div>
+				<div class="content">
+					<h3>Projects and Tags</h3>
+					<p>Project and tags are colour coded in Week, so you can quickly identify tasks based on the colour assigned to them.</p>
+				</div>
+			</div>
+			<div class="feature">
+				<div class="background background-3">
+					<img src="/calendar.svg" />
+				</div>
+				<div class="content">
+					<h3>Calendar</h3>
+					<p>Calendar allows you to view your tasks that are coming up and plan your time accordingly. Planning helps you to stay focused and complete tasks more effectively.</p>
+				</div>
+			</div>
+			<div class="feature">
+				<div class="background background-4">
+					<img src="/notes.svg" />
+				</div>
+				<div class="content">
+					<h3>Notes</h3>
+					<p>Some tasks can't be done in few minutes and you might need to save your progress. Use notes with rich formatting, links and subtasks to write down important details and continue your work later.</p>
+				</div>
+			</div>
+			<div class="feature">
+				<div class="background background-5">
+					<img src="/task-form.svg" />
+				</div>
+				<div class="content">
+					<h3>Task creation</h3>
+					<p>Quickly access task creation form without switching to the app. Capture your ideas without interrupting your current workflow.</p>
+				</div>
+			</div>
+			<div class="feature">
+				<div class="background background-6">
+					<img src="/stats.svg" />
+				</div>
+				<div class="content">
+					<h3>Statistics</h3>
+					<p>See week statistics to better understand how you are using your time and identify areas of improvement.</p>
+				</div>
+			</div>
+		</section>
+		<h2>Plans</h2>
+		<section class="plans">
+			<div class="plan">
+				<h3>Free</h3>
+				<h4>$0<span>/mo</span></h4>
+				<ul>
+					<li>
+						<span>Projects:</span>
+						<span>up to 9</span>
+					</li>
+					<li>
+						<span>Tags:</span>
+						<span>up to 9</span>
+					</li>
+					<li>
+						<span>Tasks:</span>
+						<span>unlimited</span>
+					</li>
+					<li>
+						<span>Statistics:</span>
+						<span>Basic</span>
+					</li>
+				</ul>
+				<footer>
+					<em>Free forever!</em>
+				</footer>		
+			</div>
+			<div class="plan plan-pro">
+				<h3>Pro</h3>
+				<h4>$8<span>/mo</span></h4>
+				<ul>
+					<li>
+						<span>Projects:</span>
+						<span>unlimited</span>
+					</li>
+					<li>
+						<span>Tags:</span>
+						<span>unlimited</span>
+					</li>
+					<li>
+						<span>Tasks:</span>
+						<span>unlimited</span>
+					</li>
+					<li>
+						<span>Statistics:</span>
+						<span>Full</span>
+					</li>
+				</ul>	
+				<footer>
+					<em>Coming soon!</em>
+				</footer>		
+			</div>
+
+		</section>
+	</body>
+</html>
