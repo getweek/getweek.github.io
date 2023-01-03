@@ -4,7 +4,7 @@
 	body {
 		text-align: center;
 		font-family: 'Open Sans', sans-serif;
-		padding: 0 0 120px;
+		padding: 0 0 0;
 	}
 
 	header {
@@ -41,6 +41,7 @@
 	}
 
 	h2 {
+		margin-top: 64px;
 	}
 
 	h3 {
@@ -186,11 +187,38 @@
 		color: #21a821;
 	}
 
-	.plan footer {
+	.plan .details {
 		margin-bottom: 16px;
 		font-weight: 600;
 	}
 
+	.links {
+		display: flex;
+		justify-content: center;
+		gap: 32px;
+	}
+
+	.link {
+		display: inline-block;
+		padding: 8px 16px;
+		background: #028dff;
+		color: #fff;
+		border-radius: 4px;
+		flex: 0 0 120px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	footer {
+		font-size: 14px;
+		margin-top: 120px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 24px;
+		padding: 0 20px;
+	}
 
 </style>
 
@@ -230,7 +258,7 @@
 				<a href="https://twitter.com/week_pro">
 					<img src="/twitter.svg" style="margin-top: 4px;" />
 				</a>
-				<!-- <a href="/privacy">Changelog</a> -->
+				<a href="mailto:eden@getweek.pro">Contact us</a>
 				<a href="/privacy">Privacy policy</a>
 			</nav>
 			
@@ -324,9 +352,9 @@
 						<span>Basic</span>
 					</li>
 				</ul>
-				<footer>
+				<div class="details">
 					<em>Free forever!</em>
-				</footer>		
+				</div>		
 			</div>
 			<div class="plan plan-pro">
 				<h3>Pro</h3>
@@ -349,11 +377,21 @@
 						<span>Full</span>
 					</li>
 				</ul>	
-				<footer>
+				<div class="details">
 					<em>Coming soon!</em>
-				</footer>		
+				</div>		
 			</div>
-
 		</section>
+		<h2>Links</h2>
+		<section class="links">
+			<a class="link" href="https://app.getweek.pro">Web</a>
+			<a class="link" href="https://github.com/getweek/app/releases/download/v3.0.0/Week-3.0.0.dmg">Mac<br/>(Intel)</a>
+			<a class="link" href="https://github.com/getweek/app/releases/download/v3.0.0/Week-3.0.0-arm64.dmg">Mac<br/>(Apple Silicon)</a>
+		</section>
+		<footer>
+			<div>
+				Made by <a href="https://twitter.com/lane_en">eden lane</a>.
+			</div>
+		</footer>
 	</body>
 </html>
