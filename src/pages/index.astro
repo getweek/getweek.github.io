@@ -1,4 +1,5 @@
 ---
+import Features from "../components/Features.astro";
 ---
 <style>
 	body {
@@ -286,7 +287,9 @@
 		<meta property="twitter:title" content="Week">
 		<meta property="twitter:description" content="Task management tool with a heavy focus on planning">
 		<meta property="twitter:image" content="/main-screen.png">
-		<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<header>
@@ -312,64 +315,7 @@
 			<img class="screen" src="/main-screen.png" />
 			<img class="task-info" src="/task-info.png" />
 		</section>
-		<h2>Features</h2>
-		<section class="features">
-			<div class="feature">
-				<div class="background background-1">
-					<img src="/my-day.svg" />
-				</div>
-				<div class="content">
-					<h3><img src="icons/flag.svg" class="icon icon-1" /> My Day</h3>
-					<p>Place where you can see all of your tasks that are due or scheduled for the selected day. You can also send tasks to My Day page manually to keep an eye on them.</p>
-				</div>
-			</div>
-			<div class="feature">
-				<div class="background background-2">
-					<img src="/tags.svg" />
-				</div>
-				<div class="content">
-					<h3><img src="icons/inbox.svg" class="icon icon-2" /> Projects and Tags</h3>
-					<p>Project and tags are colour coded in Week, so you can quickly identify tasks based on the colour assigned to them.</p>
-				</div>
-			</div>
-			<div class="feature">
-				<div class="background background-3">
-					<img src="/calendar.svg" />
-				</div>
-				<div class="content">
-					<h3><img src="icons/calendar.svg" class="icon icon-3" />Calendar</h3>
-					<p>Calendar allows you to view your tasks that are coming up and plan your time accordingly. Planning helps you to stay focused and complete tasks more effectively.</p>
-				</div>
-			</div>
-			<div class="feature">
-				<div class="background background-4">
-					<img src="/notes.svg" />
-				</div>
-				<div class="content">
-					<h3><img src="icons/note.svg" class="icon icon-4" />Notes</h3>
-					<p>Some tasks can't be done in few minutes and you might need to save your progress. Use notes with rich formatting, links and subtasks to write down important details and continue your work later.</p>
-				</div>
-			</div>
-			<div class="feature">
-				<div class="background background-5">
-					<img src="/task-form.svg" />
-				</div>
-				<div class="content">
-					<h3><img src="icons/form.svg" class="icon icon-5" />Task creation</h3>
-					<p>Quickly access task creation form without switching to the app. Capture your ideas without interrupting your current workflow.</p>
-					<p>Tip: Use <kbd>CMD + SHIFT + C</kbd> with Week for Mac to open quick task creation form</p>
-				</div>
-			</div>
-			<div class="feature">
-				<div class="background background-6">
-					<img src="/stats.svg" />
-				</div>
-				<div class="content">
-					<h3><img src="icons/stats.svg" class="icon icon-6" />Statistics</h3>
-					<p>See week statistics to better understand how you are using your time and identify areas of improvement.</p>
-				</div>
-			</div>
-		</section>
+		<Features />
 		<h2>Plans</h2>
 		<section class="plans">
 			<div class="plan">

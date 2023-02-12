@@ -1,0 +1,24 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project {
+  display: flex;
+  gap: 4px;
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 3px;
+  align-items: center;
+}
+
+.title {
+  flex-grow: 1;
+  text-align: left;
+  min-width: 200px;
+}
+
+.count {
+  color: #888;
+}

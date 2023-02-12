@@ -1,0 +1,71 @@
+.root {
+  height: 230px;
+  width: 400px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 10%);
+  border-radius: 3px;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 20px auto;
+  padding: 12px 16px;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 10%);
+}
+
+.title {
+  text-align: left;
+  font-size: 15px;
+}
+
+.info {
+  display: flex;
+  gap: 8px;
+  text-align: left;
+  font-size: 12px;
+}
+
+.infoCol {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.label {
+  color: #888; 
+}
+
+.content {
+  text-align: left;
+  padding: 8px 32px;
+  font-size: 14px;
+}
+
+.content a {
+  color: #03A9F4;
+}
+
+p {
+  margin-top: 0;
+}
+
+.tasks {
+
+  padding: 0 16px;
+}
+
+.task {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.task + .task {
+  margin-top: 8px;
+}
+
+.completed {
+  color: #888;
+  text-decoration: line-through;
+}

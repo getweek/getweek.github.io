@@ -1,0 +1,99 @@
+---
+import { Calendar } from "./Calendar/Calendar";
+import { MyDay } from "./MyDay/MyDay";
+import { Note } from "./Note/Note";
+import { Projects } from "./Projects/Projects";
+import { Statistics } from "./Statistics/Statistics";
+import { Tasks } from "./Tasks/Tasks";
+---
+<style>
+  main {
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px;
+  }
+
+  h3 {
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
+  .block {
+    flex: 1 0 45%;
+  }
+
+  .block .content {
+    display: flex;
+    background-color: #fbfbfb;
+    height: 324px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 10%);
+    border-radius: 4px;
+  }
+
+  .block .description {
+    margin-top: 8px;
+    font-size: 20px;
+    text-align: left;
+  }
+
+  .block .description strong {
+    font-weight: bold;
+  }
+</style>
+<h3>How Week can help you<br/>
+to be more organised?</h3>
+<main>
+  <div class="block">
+    <div class="content">
+      <Calendar />
+    </div>
+    <div class="description">
+      <strong>Time blocking</strong> allows you to allocate time for your activities and tasks in advance.
+    </div>
+  </div>
+  <div class="block">
+    <div class="content">
+      <Tasks />
+    </div>
+    <div class="description">
+      <strong>Color coding</strong> makes it easier to quickly locate the task you needed.
+    </div>
+  </div>
+  <div class="block">
+    <div class="content">
+      <Projects />
+    </div>
+    <div class="description">
+      <strong>Project and tags</strong> help you categorise your tasks and focus on most important things.
+    </div>
+  </div>
+  <div class="block">
+    <div class="content">
+      <Statistics />
+    </div>
+    <div class="description">
+      <strong>Statistics</strong> shows you how productive was your week and 
+gives useful insights about your habits.
+    </div>
+  </div>
+  <div class="block">
+    <div class="content">
+      <Note />
+    </div>
+    <div class="description">
+      <strong>Notes</strong> keep subtasks and details of long-living tasks.
+    </div>
+  </div>
+  <div class="block">
+    <div class="content">
+      <MyDay />
+    </div>
+    <div class="description">
+      <strong>My Day page</strong> displays tasks and event for the selected date.
+    </div>
+  </div>
+</main>

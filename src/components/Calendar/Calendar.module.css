@@ -1,0 +1,31 @@
+.root {
+  position: relative;
+  height: 230px;
+  width: 400px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 10%);
+  border-radius: 3px;
+  display: grid;
+  grid-template-columns: 100px 200px 100px;
+  grid-template-rows: 60px 110px 60px;
+}
+
+.cell {
+  border-right: 1px solid rgba(0, 0, 0, 10%);
+  border-bottom: 1px solid rgba(0, 0, 0, 10%);
+}
+
+.event {
+  position: absolute;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  left: 100px;
+  top: 60px;
+  width: 200px;
+  height: 110px;
+  background-color: #F3E5F5;
+  color: #7B1FA2;
+  font-size: 14px;
+  border-radius: 3px;
+  text-align: left;
+}

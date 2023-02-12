@@ -1,0 +1,62 @@
+.root {
+  height: 230px;
+  width: 400px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 10%);
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  height: 115px;
+}
+
+.lines {
+  display: flex;
+  gap: 2px;
+  flex-grow: 1;
+  align-items: end;
+}
+
+.prev {
+  background-color: #f1f1f1;
+  border-radius: 2px;
+  width: 10px;
+}
+
+.current {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 1px;
+  height: 100%;
+}
+
+.currentLine {
+  width: 10px;
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+.currentLine:hover {
+  opacity: 1;
+}
+
+.date {
+  font-size: 10px;
+}
+
+.dayName {
+  opacity: 0.4; 
+}
+
+.dayNameWeekend {
+  color: red;
+  opacity: 0.9;
+}
+
