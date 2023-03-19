@@ -1,8 +1,32 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
 import Features from "../components/Features.astro";
 ---
 <style>
+	body {
+		text-align: center;
+		font-family: 'Open Sans', sans-serif;
+		padding: 0 0 0;
+	}
+
+	header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 24px;
+		padding: 0 20px;
+	}
+
+	header h1 {
+		font-size: 20px;
+		gap: 8px;
+	}
+
+	header nav {
+		display: flex;
+		align-items: center;
+		gap: 24px;
+	}
+
 	a {
 		color: #028dff;
 		text-decoration: none;
@@ -245,83 +269,53 @@ import Features from "../components/Features.astro";
 
 </style>
 
-<BaseLayout>
-	<h2>Task management tool<br /> with a heavy focus on planning</h2>
-	<section class="screenshots">
-		<img class="screen" src="/main-screen.png" />
-		<img class="task-info" src="/task-info.png" />
-	</section>
-	<Features />
-	<h2>Plans</h2>
-	<section class="plans">
-		<div class="plan">
-			<h3>Free</h3>
-			<h4>$0<span>/mo</span></h4>
-			<ul>
-				<li>
-					<span>Projects:</span>
-					<span>up to 9</span>
-				</li>
-				<li>
-					<span>Tags:</span>
-					<span>up to 9</span>
-				</li>
-				<li>
-					<span>Accounts:</span>
-					<span>1</span>
-				</li>
-				<li>
-					<span>Tasks:</span>
-					<span>unlimited</span>
-				</li>
-				<li>
-					<span>Statistics:</span>
-					<span>Basic</span>
-				</li>
-			</ul>
-			<div class="details">
-				<em>Free forever!</em>
-			</div>		
-		</div>
-		<div class="plan plan-pro">
-			<h3>Pro</h3>
-			<h4>$8<span>/mo</span></h4>
-			<ul>
-				<li>
-					<span>Projects:</span>
-					<span>unlimited</span>
-				</li>
-				<li>
-					<span>Tags:</span>
-					<span>unlimited</span>
-				</li>
-				<li>
-					<span>Accounts:</span>
-					<span>up to 3</span>
-				</li>
-				<li>
-					<span>Tasks:</span>
-					<span>unlimited</span>
-				</li>
-				<li>
-					<span>Statistics:</span>
-					<span>Full</span>
-				</li>
-			</ul>	
-			<div class="details">
-				<em>Coming soon!</em>
-			</div>		
-		</div>
-	</section>
-	<h2>Links</h2>
-	<section class="links">
-		<a class="link" href="https://app.getweek.pro">Web</a>
-		<a class="link" href="https://github.com/getweek/app/releases/download/v3.3.0/Week-3.3.0.dmg">Mac<br/>(Intel)</a>
-		<a class="link" href="https://github.com/getweek/app/releases/download/v3.3.0/Week-3.3.0-arm64.dmg">Mac<br/>(Apple Silicon)</a>
-	</section>
-	<footer>
-		<div>
-			Made by <a href="https://twitter.com/lane_en">eden lane</a>.
-		</div>
-	</footer>
-</BaseLayout>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<!-- Primary Meta Tags -->
+		<title>Week</title>
+		<meta name="title" content="Week">
+		<meta name="description" content="Task management tool with a heavy focus on planning">
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://getweek.pro/">
+		<meta property="og:title" content="Week">
+		<meta property="og:description" content="Task management tool with a heavy focus on planning">
+		<meta property="og:image" content="/main-screen.png">
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:url" content="https://getweek.pro/">
+		<meta property="twitter:title" content="Week">
+		<meta property="twitter:description" content="Task management tool with a heavy focus on planning">
+		<meta property="twitter:image" content="/main-screen.png">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<h1>
+				<img class="logo" src="/week.svg" width="24" height="24" />
+				Week
+			</h1>
+			<nav>
+				<a href="https://twitter.com/week_pro">
+					<img src="/twitter.svg" style="margin-top: 4px;" />
+				</a>
+				<a href="mailto:eden@getweek.pro">Contact us</a>
+				<a href="/privacy">Privacy policy</a>
+			</nav>
+			
+		</header>
+		<h1>
+			<img src="/week.svg" width="48" height="48" />
+			Week
+		</h1>
+    <slot />
+	</body>
+</html>
