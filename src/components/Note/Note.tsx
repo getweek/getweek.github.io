@@ -3,12 +3,13 @@ import type { ReactNode } from 'react';
 import { Checkbox } from '../Checkbox/Checkbox';
 import { DonutChart } from '../DonutChart/DonutChart';
 import styles from './Note.module.css';
+import { TaskStatus } from '../TaskStatus/TaskStatus';
 
 export const Note = () => {
   return (
     <div className={styles.root}>
       <header className={styles.header}>
-        <Checkbox />
+        <TaskStatus status="inProgress" />
         <span className={styles.title}>Prepare dashboard for metrics</span>
         <span />
         <div className={styles.info}>
@@ -29,8 +30,8 @@ export const Note = () => {
 should display Web Vitals metrics and overall score.
         </p>
         <ul className={styles.tasks}>
-          <Task isCompleted>Request permissions to edit dashboards</Task>
-          <Task>Create a dashboard from template</Task>
+          <Task status="completed">Request permissions to edit dashboards</Task>
+          <Task status="inProgress">Create a dashboard from template</Task>
         </ul>
         <p>
           <a href="https://web.dev/vitals/" target="_blank">
@@ -44,14 +45,14 @@ should display Web Vitals metrics and overall score.
 
 type TaskProps = {
   children: ReactNode;
-  isCompleted?: boolean;
+  status: string;
 }
 
-const Task = ({children, isCompleted}: TaskProps) => {
+const Task = ({children, status}: TaskProps) => {
   return (
-    <div className={`${styles.task} ${isCompleted ? styles.completed : ''}`}>
-      <Checkbox value={isCompleted} />
-      <span>{children}</span>
+    <div className={styles.task}>
+      <TaskStatus status={status}  />
+      <span className={`${status === 'completed' ? styles.completed : ''}`}>{children}</span>
     </div>
   )
 }

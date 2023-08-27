@@ -2,6 +2,7 @@ import React from 'react';
 import type { ReactNode } from 'react';
 import { Checkbox } from '../Checkbox/Checkbox';
 import styles from './Task.module.css';
+import { TaskStatus } from '../TaskStatus/TaskStatus';
 
 type Props = {
   id: number;
@@ -9,6 +10,7 @@ type Props = {
   isStarred?: boolean;
   atMyDay?: boolean;
   hasNote?: boolean;
+  status: string;
   project: {
     title: string;
     color: string;
@@ -25,7 +27,7 @@ type Props = {
 export const Task = (props: Props) => {
   return (
     <div className={styles.task}>
-      <Checkbox />
+      <TaskStatus status={props.status} />
       <span className={styles.title}>
         <span>{props.title}</span>
         {

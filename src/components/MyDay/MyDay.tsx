@@ -12,6 +12,7 @@ const tasks = [
   { 
     id: 1, 
     title: 'Wash dishes', 
+    status: 'notStarted',
     project: {
       title: 'Home',
       color: '#E8F5E9'
