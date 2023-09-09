@@ -1,0 +1,66 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const allPosts = await Astro.glob('./posts/changelog/*.md');
+import { format } from "date-fns";
+---
+<style>
+  ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    width: 640px;
+  }
+
+  li {
+    display: flex;
+    width: 640px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #444;
+  }
+
+  h3 {
+    margin: 0 0 12px;
+  }
+
+  article {
+    font-size: 18px;
+  }
+  
+  .sidebar {
+    padding: 3px 0;
+    font-size: 13px;
+    width: 150px;
+    flex-shrink: 0;
+  }
+
+  .post-info {
+    text-align: left;
+  }
+</style>
+
+<BaseLayout pageTitle="Changelog">
+  <h2>Changelog</h2>
+  <ul>
+    {
+      allPosts.reverse().map(post => (
+        <li>
+          <div class="sidebar">
+            {format(new Date(post.frontmatter.date), 'dd MMMM yyyy')}
+          </div>
+          <div class="post-info">
+            <h3>{post.frontmatter.title}</h3>
+            {
+              post.frontmatter.image && <img width="100%" src={post.frontmatter.image.url} />  
+            }
+            <article set:html={post.compiledContent()} />
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>

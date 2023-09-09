@@ -155,12 +155,21 @@ import FAQ from "../components/FAQ.astro";
 		flex-wrap: wrap;
 		justify-content: center;
 		gap: 16px;
+		font-size: 14px;
 	}
 
 	.plan {
 		flex: 0 0 250px;
 		border: 1px solid #d8d8d8;
+		background-color: #fafafa;
 		box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.09);
+		border-radius: 4px;
+		color: #fff;
+		transition: all 0.2s ease-in-out;
+	}
+
+	.plan:hover {
+		transform: scale(1.05);
 	}
 
 	.plan h3 {
@@ -197,12 +206,22 @@ import FAQ from "../components/FAQ.astro";
 		margin-top: 5px;
 	}
 
-	.plan li span:nth-child(2) {
-		color: #028dff;
+	.plan li > span {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
 	}
 
-	.plan-pro li span:nth-child(2) {
-		color: #21a821;
+	.plan li > span:first-child {
+		opacity: 0.8;
+	}
+
+	.plan li > span:nth-child(2) {
+		color: #222;
+	}
+
+	.plan-pro li > span:nth-child(2) {
+		color: #111;
 	}
 
 	.plan .details {
@@ -253,7 +272,7 @@ import FAQ from "../components/FAQ.astro";
 		<img class="task-info" src="/task-info.png" />
 	</section>
 	<Features />
-	<FAQ />
+	
 	<h2>Plans</h2>
 	<section class="plans">
 		<div class="plan">
@@ -261,23 +280,38 @@ import FAQ from "../components/FAQ.astro";
 			<h4>$0<span>/mo</span></h4>
 			<ul>
 				<li>
-					<span>Projects:</span>
+					<span>
+						<img src="/icons/folder.svg" width="12" height="12" />
+						<span>Projects:</span>
+					</span>
 					<span>up to 9</span>
 				</li>
 				<li>
-					<span>Tags:</span>
+					<span>
+						<img src="/icons/tags.svg" width="12" height="12" />
+						<span>Tags:</span>
+					</span>
 					<span>up to 9</span>
 				</li>
 				<li>
-					<span>Accounts:</span>
+					<span>
+						<img src="/icons/persons.svg" width="12" height="12" />
+						<span>Accounts:</span>
+					</span>
 					<span>1</span>
 				</li>
 				<li>
-					<span>Tasks:</span>
+					<span>
+						<img src="/icons/tasks.svg" width="12" height="12" />
+						<span>Tasks:</span>
+					</span>
 					<span>unlimited</span>
 				</li>
 				<li>
-					<span>Statistics:</span>
+					<span>
+						<img src="/icons/stats.svg" width="12" height="12" />
+						<span>Statistics:</span>
+					</span>
 					<span>Basic</span>
 				</li>
 			</ul>
@@ -321,9 +355,4 @@ import FAQ from "../components/FAQ.astro";
 		<a class="link" href="https://github.com/getweek/app/releases/download/v3.4.0/Week-3.4.0.dmg">Mac<br/>(Intel)</a>
 		<a class="link" href="https://github.com/getweek/app/releases/download/v3.4.0/Week-3.4.0-arm64.dmg">Mac<br/>(Apple Silicon)</a>
 	</section>
-	<footer>
-		<div>
-			Made by <a href="https://x.com/lane_en">eden lane</a> and <a href="https://x.com/av3ngard">Albert</a>.
-		</div>
-	</footer>
 </BaseLayout>

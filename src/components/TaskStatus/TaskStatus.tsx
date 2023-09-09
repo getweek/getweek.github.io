@@ -8,19 +8,19 @@ export const TaskStatus = ({status}) => {
   switch (status) {
     case 'notStarted':
       return (
-        <img src={notStarted} />
+        <img src={notStarted.src} />
       )
     case 'inProgress':
       return (
-        <img src={inProgress} />
+        <img src={inProgress.src} />
       )
     case 'completed':
       return (
-        <img src={completed} />
+        <img src={completed.src} />
       )
     case 'cancelled':
       return (
-        <img src={cancelled} />
+        <img src={cancelled.src} />
       )
   }
 

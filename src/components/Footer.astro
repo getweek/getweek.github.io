@@ -1,0 +1,119 @@
+---
+import apps from './apps.json'
+---
+
+<style>
+  footer {
+    padding: 64px 64px 0;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #eee;
+    margin-top: 64px;
+  }
+
+  h4 {
+    margin: 0;
+  }
+
+  .blocks {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: left;
+    font-size: 14px;
+  }
+
+  .block ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .block ul li + li {
+    margin-top: 4px;
+  }
+  
+  .info {
+    display: flex;
+    gap: 64px;
+  }
+
+  .about {
+    align-items: flex-start;
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .week {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+  }
+
+  .copyright {
+    font-size: 12px;
+  }
+
+  .authors {
+    font-size: 13px;
+    padding: 24px;
+  }
+</style>
+
+<footer>
+  <section class="blocks">
+    <section class="about block">
+      <div class="week">
+        <img class="logo" src="/week.svg" width="24" height="24" />
+        Week
+        </div>
+      <div class="copyright">©️ 2023</div>
+    </section>
+    <section class="info">
+      <section class="block">
+        <h4>Product</h4>
+        <ul>
+          <li>
+            <a href="/faq">F.A.Q.</a>
+          </li>
+          <li>
+            <a href="/changelog">Changelog</a>
+          </li>
+          <li>
+            <a href="/privacy">Privacy Policy</a>
+          </li>
+        </ul>
+      </section>
+      <secition class="block">
+        <h4>App</h4>
+        <ul>
+          <li>
+            <a href="https://app.getweek.pro">Web</a>
+          </li>
+          <li>
+            <a href={`https://github.com/getweek/app/releases/download/v${apps.version}/Week-${apps.version}.dmg`}>Mac (Intel)</a>
+          </li>
+          <li>
+            <a href={`https://github.com/getweek/app/releases/download/v${apps.version}/Week-${apps.version}-arm64.dmg`}>Mac (Apple Silicon)</a>
+          </li>
+        </ul>
+      </secition>
+      <secition class="block">
+        <h4>Social</h4>
+        <ul>
+          <li>
+            <a href="https://twitter.com/week_pro">Twitter</a>
+          </li>
+        </ul>
+      </secition>
+    </section>
+  </section>
+  <div class="authors">
+    Made by <a href="https://x.com/lane_en">eden lane</a> and <a href="https://x.com/av3ngard">Albert</a>.
+  </div>
+</footer>
