@@ -31,6 +31,10 @@ import FAQ from "../components/FAQ.astro";
 		font-weight: 900;
 	}
 
+	main {
+		padding: 0 24px;
+	}
+	
 	.screenshots {
 		position: relative;
 		max-width: 1200px;
@@ -161,11 +165,15 @@ import FAQ from "../components/FAQ.astro";
 	.plan {
 		flex: 0 0 250px;
 		border: 1px solid #d8d8d8;
-		background-color: #fafafa;
+		background-color: #2196F3;
 		box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.09);
 		border-radius: 4px;
 		color: #fff;
 		transition: all 0.2s ease-in-out;
+	}
+
+	.plan * {
+		color: #fff;
 	}
 
 	.plan:hover {
@@ -175,13 +183,15 @@ import FAQ from "../components/FAQ.astro";
 	.plan h3 {
 		justify-content: center;
 		font-size: 24px;
-		border-bottom: 1px solid #eee;
+		border-bottom: 1px solid #277cc0;
 		margin-bottom: 24px;
+		color: #fff;
 	}
 
 	.plan h4 {
 		font-size: 36px;
 		position: relative;
+		color: inherit;
 	}
 
 	.plan h4 > span {
@@ -189,6 +199,7 @@ import FAQ from "../components/FAQ.astro";
 		top: 20px;
 		font-size: 16px;
 		opacity: 0.7;
+		color: inherit;
 	}
 
 	.plan ul {
@@ -200,6 +211,7 @@ import FAQ from "../components/FAQ.astro";
 	.plan ul li {
 		display: flex;
 		justify-content: space-between;
+		color: inherit;
 	}
 
 	.plan ul li + li {
@@ -210,23 +222,19 @@ import FAQ from "../components/FAQ.astro";
 		display: inline-flex;
 		align-items: center;
 		gap: 8px;
+		color: #fff;
 	}
 
 	.plan li > span:first-child {
 		opacity: 0.8;
+		color: #fff;
 	}
 
-	.plan li > span:nth-child(2) {
-		color: #222;
-	}
-
-	.plan-pro li > span:nth-child(2) {
-		color: #111;
-	}
 
 	.plan .details {
 		margin-bottom: 16px;
 		font-weight: 600;
+		color: #fff;
 	}
 
 	.links {
@@ -266,108 +274,110 @@ import FAQ from "../components/FAQ.astro";
 </style>
 
 <BaseLayout>
-	<h2>Task management tool<br /> with a heavy focus on planning</h2>
-	<section class="screenshots">
-		<img class="screen" src="/main-screen.png" />
-		<img class="task-info" src="/task-info.png" />
-	</section>
-	<Features />
-	
-	<h2>Plans</h2>
-	<section class="plans">
-		<div class="plan">
-			<h3>Free</h3>
-			<h4>$0<span>/mo</span></h4>
-			<ul>
-				<li>
-					<span>
-						<img src="/icons/folder.svg" width="12" height="12" />
-						<span>Projects:</span>
-					</span>
-					<span>up to 9</span>
-				</li>
-				<li>
-					<span>
-						<img src="/icons/tags.svg" width="12" height="12" />
-						<span>Tags:</span>
-					</span>
-					<span>up to 9</span>
-				</li>
-				<li>
-					<span>
-						<img src="/icons/persons.svg" width="12" height="12" />
-						<span>Accounts:</span>
-					</span>
-					<span>1</span>
-				</li>
-				<li>
-					<span>
-						<img src="/icons/tasks.svg" width="12" height="12" />
-						<span>Tasks:</span>
-					</span>
-					<span>∞</span>
-				</li>
-				<li>
-					<span>
-						<img src="/icons/stats.svg" width="12" height="12" />
-						<span>Statistics:</span>
-					</span>
-					<span>Basic</span>
-				</li>
-			</ul>
-			<div class="details">
-				<em>Free forever!</em>
-			</div>		
-		</div>
-		<div class="plan plan-pro">
-			<h3>Pro</h3>
-			<h4>$8<span>/mo</span></h4>
-			<ul>
-				<li>
-					<span>
-						<img src="/icons/folder.svg" width="12" height="12" />
-						<span>Projects:</span>
-					</span>
-					<span>∞</span>
-				</li>
-				<li>
-					<span>
-						<img src="/icons/tags.svg" width="12" height="12" />
-						<span>Tags:</span>
-					</span>
-					<span>∞</span>
-				</li>
-				<li>
-					<span>
-						<img src="/icons/persons.svg" width="12" height="12" />
-						<span>Accounts:</span>
-					</span>
-					<span>up to 3</span>
-				</li>
-				<li>
-					<span>
-						<img src="/icons/tasks.svg" width="12" height="12" />
-						<span>Tasks:</span>
-					</span>
-					<span>∞</span>
-				</li>
-				<li>
-					<span>
-						<img src="/icons/stats.svg" width="12" height="12" />
-						<span>Statistics:</span>
-					</span>
-					<span>Advanced</span>
-				</li>
-			</ul>	
-			<div class="details">
-				<em>Coming soon!</em>
-			</div>		
-		</div>
-	</section>
-	<h2>Links</h2>
-	<section class="links">
-		<a class="link" href="https://app.getweek.pro">Web</a>
-		<a class="link" href="https://github.com/getweek/app/releases/download/v3.4.0/Week-3.4.0.dmg">Mac<br/>(Intel)</a>
-		<a class="link" href="https://github.com/getweek/app/releases/download/v3.4.0/Week-3.4.0-arm64.dmg">Mac<br/>(Apple Silicon)</a>
-	</section>
+	<main>
+		<h2>Task management tool<br /> with a heavy focus on planning</h2>
+		<section class="screenshots">
+			<img class="screen" src="/main-screen.png" />
+			<img class="task-info" src="/task-info.png" />
+		</section>
+		<Features />
+		
+		<h2>Plans</h2>
+		<section class="plans">
+			<div class="plan">
+				<h3>Free</h3>
+				<h4>$0<span>/mo</span></h4>
+				<ul>
+					<li>
+						<span>
+							<img src="/icons/folder.svg" width="16" height="16" />
+							<span>Projects:</span>
+						</span>
+						<span>up to 9</span>
+					</li>
+					<li>
+						<span>
+							<img src="/icons/tags.svg" width="16" height="16" />
+							<span>Tags:</span>
+						</span>
+						<span>up to 9</span>
+					</li>
+					<li>
+						<span>
+							<img src="/icons/persons.svg" width="16" height="16" />
+							<span>Accounts:</span>
+						</span>
+						<span>1</span>
+					</li>
+					<li>
+						<span>
+							<img src="/icons/tasks.svg" width="16" height="16" />
+							<span>Tasks:</span>
+						</span>
+						<span>∞</span>
+					</li>
+					<li>
+						<span>
+							<img src="/icons/stats.svg" width="16" height="16" />
+							<span>Statistics:</span>
+						</span>
+						<span>Basic</span>
+					</li>
+				</ul>
+				<div class="details">
+					<em>Free forever!</em>
+				</div>		
+			</div>
+			<div class="plan plan-pro">
+				<h3>Pro</h3>
+				<h4>$8<span>/mo</span></h4>
+				<ul>
+					<li>
+						<span>
+							<img src="/icons/folder.svg" width="16" height="16" />
+							<span>Projects:</span>
+						</span>
+						<span>∞</span>
+					</li>
+					<li>
+						<span>
+							<img src="/icons/tags.svg" width="16" height="16" />
+							<span>Tags:</span>
+						</span>
+						<span>∞</span>
+					</li>
+					<li>
+						<span>
+							<img src="/icons/persons.svg" width="16" height="16" />
+							<span>Accounts:</span>
+						</span>
+						<span>up to 3</span>
+					</li>
+					<li>
+						<span>
+							<img src="/icons/tasks.svg" width="16" height="16" />
+							<span>Tasks:</span>
+						</span>
+						<span>∞</span>
+					</li>
+					<li>
+						<span>
+							<img src="/icons/stats.svg" width="16" height="16" />
+							<span>Statistics:</span>
+						</span>
+						<span>Advanced</span>
+					</li>
+				</ul>	
+				<div class="details">
+					<em>Coming soon!</em>
+				</div>		
+			</div>
+		</section>
+		<h2>Links</h2>
+		<section class="links">
+			<a class="link" href="https://app.getweek.pro">Web</a>
+			<a class="link" href="https://github.com/getweek/app/releases/download/v3.4.0/Week-3.4.0.dmg">Mac<br/>(Intel)</a>
+			<a class="link" href="https://github.com/getweek/app/releases/download/v3.4.0/Week-3.4.0-arm64.dmg">Mac<br/>(Apple Silicon)</a>
+		</section>
+	</main>
 </BaseLayout>
