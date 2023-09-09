@@ -1,0 +1,203 @@
+---
+import { TaskStatus } from "../components/TaskStatus/TaskStatus";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<style>
+  main {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  article {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  h2 {
+    text-align: center;
+  }
+  
+  h5 {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  ul li + li {
+    margin-top: 8px;
+  }
+
+  p {
+    line-height: 28px;
+  }
+
+  code {
+    font-size: 18px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .tag {
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 13px;
+    line-height: 14px;
+  }
+
+  .project-work {
+    background-color: #ede7f6;
+    color: #7b1fa2;
+  }
+
+  .project-personal {
+    background-color: #e8f5e9;
+    color: #388e3c;
+  }
+
+  .project-education {
+    background-color: #e8eaf6;
+    color: #303f9f;
+  }
+
+  .tag-article {
+    background-color: #b2ebf2;
+    color: #007786;
+  }
+
+  .tag-book {
+    background-color: #dcedc8;
+    color: #4e9000;
+  }
+  
+  .tag-video {
+    background-color: #ffcdd2;
+    color: #f90e25;
+  }
+
+  .hotkey {
+    border: 1px solid #ddd;
+    padding: 0 4px;
+    border-radius: 4px;
+    background-color: #fdfdfd;
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.06);
+  }
+
+  .button {
+    border-radius: 4px;
+    background-color: #03a9f4;
+    color: #fff;
+    padding: 0 8px;
+    font-size: 13px;
+  }
+
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    line-height: 12px;
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+
+  .status-completed {
+    background-color: rgba(82, 190, 128, 0.2);
+    color: #4caf50;
+  }
+
+  .status-cancelled {
+    background-color: rgba(157, 157, 157, 0.2);
+    color: #666;
+  }
+</style>
+
+<BaseLayout>
+  <main>
+    <article>
+      <h2>How we use Week</h2>
+      <h5>
+        <strong>Week</strong> is a task management app that helps us to manage our time 
+        effectively and plan the work ahead. We're going to tell you what's 
+        our flow looks like, but remember that there is no one ideal way to 
+        do things in the app. Feel free to make changes to our flow and make 
+        it truly yours.
+      </h5>
+
+      <h3>Setting up Week</h3>
+      <p>
+        First of all, when you start working in Week, you need to prepare it for your own needs. Start by creating projects and tags. 
+      </p>
+      <img src="/how-to/1-projects.png" alt="How to create projects" />
+      <p>
+        <strong>Projects</strong> are areas of your life on which you're going to focus on. For example, I have a <span class="tag project-work">Work</span> project and a <span class="tag project-personal">Personal</span> project. They have different colours because I want to easily see which part of the day takes each of these spheres of my occupies.
+      </p>
+      <p>
+        <strong>Tags</strong> are very similar to Projects, but you can add multiple tags to a single task. You can use tags to specify your task even further. For example, I have a project called <span class="tag project-education">Education</span> and multiple tags: <span class="tag tag-article">article</span>, <span class="tag tag-book">book</span> and <span class="tag tag-video">video</span>.  When I add a task to this project, I also add a tag to know the type of content I'm going to consume. Sometimes I'm ready to read some articles and sometimes I have only enough energy to watch something. Tags help me to find the needed type of content quickly.
+      </p>
+      <p>
+        If you need to see multiple timezones at once, you can add them in the settings. Here, you can also change the theme of the app. After that you're ready to use Week!
+      </p>
+      <img src="/how-to/2-timezones.png" alt="How to change timezones" />
+      <h3>Collecting tasks</h3>
+      <p>
+        When I need to do something in the future, I add a task with no dates. There are multiple ways to do that, but I prefer to use the shortcut <span class="hotkey">C</span> as it is the quickest way. Add title to the task (which is the only required field to fill) and provide some other details. You can also add a <strong>note</strong> (such as a link to a video), set up the <strong>project</strong>, <strong>tags</strong>, and <strong>priority</strong>. I rarely use <strong>due date</strong>, but sometimes it is useful when you want to remember that a task has a deadline.
+      </p>
+      <p>
+        When everything is ready, press the <span class="button">Add</span> button and the task will be captured!
+      </p>
+      <img src="/how-to/3-task-creation.png" alt="How to create a task" />
+
+      <h3>Planning</h3>
+      <p>
+        When you have collected enough tasks, it's time to start dealing with them. I do that from the <strong>calendar page</strong>. On the left side of the app you can see a list of your unscheduled tasks which are grouped by project (but you can change the grouping to "by tags" or "by priority"). Just drag and drop a task onto the calendar to book some time slot for this task. One task can have multiple time slots, but we will talk about it later. At the top of the day you can see the amount of time planned for today. Use this information to plan the right amount of work for the day. Sometimes it's better to work less, but smarter!
+      </p>
+      <img src="/how-to/4-calendar.png" alt="How to plan the day" />
+      
+      <h3>Working through the day</h3>
+      <p>I prefer to use the <strong>My Day</strong> page to keep an eye on today's tasks. On this page, you can see the tasks that are:</p>
+      <ul>
+        <li><strong>Added to My Day manually</strong> when creating a task or via the context menu. I use this feature to track tasks that should be close by. For example, I use this option for the Week's release tasks as they are usually last longer than one day.</li>
+        <li>Tasks that are <strong>Due Today</strong>. To send a task to the My Day page on a specific date, you can set the due date of the task to that date.</li>
+        <li>Tasks that are <strong>planned for today</strong>.</li>
+        <li>Tasks that are <strong>overdue</strong>.</li>
+      </ul>
+      <p>
+        I start working on a task when it's time for it. 
+        At the end of the work, I adjust the time slot if 
+        doing the task took less or more time than expected. 
+        Then I mark it as 
+        <span class="status status-completed">
+          <TaskStatus status="completed" />completed
+        </span> or 
+        <span class="status status-cancelled">
+          <TaskStatus status="cancelled" />cancelled
+        </span> and proceed to the next task. If I had planned for a break, I take one. 
+        Sometimes I can't finish a task in one attempth. 
+        In such cases I drag and drop the task from 
+        <strong>My Day</strong> to the new time slot 
+        on the calendar one more time. It is extremely convenient 
+        to have multiple time slots for a single task, as you don't 
+        have to duplicate the task to continue working on it.
+      </p>
+      <img src="/how-to/5-my-day.png" alt="How to plan the day" />
+
+      <h3>Working on a big task</h3>
+      <p>
+        Some tasks are much much larger than others. In some sense it's not just a 
+        task per se, it's a small project. For these tasks I relay heavily on 
+        the <strong>task's notes</strong>. I go to the note and fill it with useful 
+        information that can help me tackle the task. For example, you can add 
+        links or description. More importantly you can add <strong>subtasks</strong> 
+        right in the document. Use the button on the toolbar or type <code>[]</code> 
+        and press <span class="hotkey">Space</span> to add a subtask. Subtasks 
+        can be dragged and dropped on the calendar just like regular tasks. 
+        You can't edit the project of subtasks, but you can add tags and due date. 
+        To edit a subtask's title, simply change it in the note.
+      </p>
+      <img src="/how-to/6-note.png" alt="How to add notes" />
+    </article>
+  </main>
+</BaseLayout>
