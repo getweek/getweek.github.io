@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Features from "../components/Features.astro";
 import FAQ from "../components/FAQ.astro";
+import apps from "../components/apps.json";
 ---
 <style>
 	a {
@@ -385,8 +386,8 @@ import FAQ from "../components/FAQ.astro";
 		<h2>Links</h2>
 		<section class="links">
 			<a class="link" href="https://app.getweek.pro">Web</a>
-			<a class="link" href="https://github.com/getweek/app/releases/download/v3.4.0/Week-3.4.0.dmg">Mac<br/>(Intel)</a>
-			<a class="link" href="https://github.com/getweek/app/releases/download/v3.4.0/Week-3.4.0-arm64.dmg">Mac<br/>(Apple Silicon)</a>
+			<a class="link" href={`https://github.com/getweek/app/releases/download/v${apps.version}/Week-${apps.version}.dmg`}>Mac<br/>(Intel)</a>
+			<a class="link" href={`https://github.com/getweek/app/releases/download/v${apps.version}/Week-${apps.version}-arm64.dmg`}>Mac<br/>(Apple Silicon)</a>
 		</section>
 	</main>
 </BaseLayout>
