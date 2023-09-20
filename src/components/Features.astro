@@ -3,9 +3,14 @@ import { Calendar } from "./Calendar/Calendar";
 import { MyDay } from "./MyDay/MyDay";
 import { Note } from "./Note/Note";
 import { Projects } from "./Projects/Projects";
+import { Regions } from "./Regions/Regions";
+import { Goals } from "./Goals/Goals";
 import { Statistics } from "./Statistics/Statistics";
+import { CommandBar } from "./CommandBar/CommandBar";
+import { Tracker } from "./Tracker/Tracker";
 import { Tasks } from "./Tasks/Tasks";
 ---
+
 <style>
   main {
     margin: 0 auto;
@@ -19,19 +24,24 @@ import { Tasks } from "./Tasks/Tasks";
     font-size: 36px;
     font-weight: bold;
   }
-  
+
   .block {
-    flex: 1 0 45%;
+    flex: 1 0 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
   }
 
   .block .content {
+    height: 100%;
+    width: 100%;
     display: flex;
     background-color: #fbfbfb;
-    height: 324px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     border: 1px solid rgba(0, 0, 0, 10%);
     border-radius: 4px;
+    flex-direction: column;
   }
 
   .block .description {
@@ -40,19 +50,31 @@ import { Tasks } from "./Tasks/Tasks";
     text-align: left;
   }
 
+  .block .note {
+    font-size: 11px;
+    border-radius: 8px;
+    background-color: cornflowerblue;
+    color: #fff;
+    padding: 2px 4px;
+    margin-bottom: 16px;
+  }
+
   .block .description strong {
     font-weight: bold;
   }
 </style>
-<h3>How Week can help you<br/>
-to be more organised?</h3>
+<h3>
+  How Week can help you<br />
+   to be more organised?
+</h3>
 <main>
   <div class="block">
     <div class="content">
       <Calendar />
     </div>
     <div class="description">
-      <strong>Time blocking</strong> allows you to allocate time for your activities and tasks in advance.
+      <strong>Time blocking</strong> allows you to allocate time for your
+      activities and tasks in advance.
     </div>
   </div>
   <div class="block">
@@ -60,7 +82,8 @@ to be more organised?</h3>
       <Tasks />
     </div>
     <div class="description">
-      <strong>Color coding</strong> makes it easier to quickly locate the task you needed.
+      <strong>Color coding</strong> makes it easier to quickly locate the task
+      you needed.
     </div>
   </div>
   <div class="block">
@@ -68,7 +91,8 @@ to be more organised?</h3>
       <Projects />
     </div>
     <div class="description">
-      <strong>Project and tags</strong> help you categorise your tasks and focus on most important things.
+      <strong>Project and tags</strong> help you categorise your tasks and focus
+      on most important things.
     </div>
   </div>
   <div class="block">
@@ -76,8 +100,8 @@ to be more organised?</h3>
       <Statistics />
     </div>
     <div class="description">
-      <strong>Statistics</strong> shows you how productive was your week and 
-gives useful insights about your habits.
+      <strong>Statistics</strong> shows you how productive was your week and
+      gives useful insights about your habits.
     </div>
   </div>
   <div class="block">
@@ -93,7 +117,44 @@ gives useful insights about your habits.
       <MyDay />
     </div>
     <div class="description">
-      <strong>My Day page</strong> displays tasks and events for the selected date.
+      <strong>My Day page</strong> displays tasks and events for the selected
+      date.
+    </div>
+  </div>
+  <div class="block">
+    <div class="content">
+      <CommandBar client:load />
+    </div>
+    <div class="description">
+      <strong>Command bar</strong> helps you to quickly find tasks and run commands.
+    </div>
+  </div>
+  <div class="block">
+    <div class="content">
+      <Tracker client:load />
+      <div class="note">Coming soon</div>
+    </div>
+    <div class="description">
+      The <strong>time tracker</strong> allows you to manually track the time spent on tasks.
+    </div>
+  </div>
+  <div class="block">
+    <div class="content">
+      <Regions />
+      <div class="note">Coming Soon</div>
+    </div>
+    <div class="description">
+      <strong>Areas</strong> will help you to group tasks by context.
+    </div>
+  </div>
+  <div class="block">
+    <div class="content">
+      <Goals />
+      <div class="note">Coming Soon</div>
+    </div>
+    <div class="description">
+      <strong>Goals</strong> will help you to track your dreams and achieve
+      them.
     </div>
   </div>
 </main>

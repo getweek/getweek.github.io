@@ -1,0 +1,97 @@
+.root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.goal {
+  background-color: #fff;
+  position: absolute;
+  border-radius: 8px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 320px;
+  top: calc(50% - 130px);
+  left: calc(50% - 160px);
+  transition: transform 0.2s ease-in-out;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.goal .image {
+  width: 100%;
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.goal .title {
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.goal .description {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 0 8px;
+  font-size: 12px;
+  color: #444;
+}
+
+.goal .progress {
+  padding: 16px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.goal .progressText {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.goal .progressLine {
+  height: 4px;
+  background-color: #ddd;
+  border-radius: 4px;
+  position: relative;
+}
+
+.goal .progressLineFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #8357FF;
+  border-radius: 4px;
+}
+
+.goal1 .image {
+  background-image: url(/goal1.jpeg);
+}
+
+.goal2 {
+  transform: translateX(-30px) rotateZ(-5deg);
+}
+
+.goal3 {
+  transform: translateX(30px) rotateZ(5deg);
+}
+
+.goal2 .progressLineFill {
+  background-color: #30c84f;
+}
+
+.root:hover .goal2 {
+  transform: translateX(-35px) rotateZ(-7deg);
+}
+
+.root:hover .goal3 {
+  transform: translateX(35px) rotateZ(7deg);
+}

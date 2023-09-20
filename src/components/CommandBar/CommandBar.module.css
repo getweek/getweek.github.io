@@ -1,0 +1,102 @@
+.root {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.commandBar {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  perspective: 380px;
+}
+
+.commandBar .inputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+.commandBar .input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #444;
+  background-color: #fff;
+}
+
+.commandBar .body {
+  height: 200px;
+  padding: 4px 8px;
+  overflow-y: auto;
+}
+
+.commandBar .group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.commandBar .groupTitle {
+  font-size: 11px;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+
+.commandBar .items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.commandBar .item {
+  display: flex;
+  overflow: hidden;
+  gap: 8px;
+  align-items: center;
+  background-color: transparent;
+  padding: 4px;
+  border-radius: 4px;
+  min-height: 24px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.commandBar .item:hover, .commandBar .item.active {
+  background-color: #fafafa;
+}
+
+.commandBar .footer {
+  background-color: #fafafa;
+  padding: 4px 8px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.commandBar .footer > div {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hotkeys {
+  display: flex;
+  align-items: center;
+}

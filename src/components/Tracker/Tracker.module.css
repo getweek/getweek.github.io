@@ -1,0 +1,41 @@
+.root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tracker {
+  width: 60%;
+  border-radius: 4px;
+  padding: 4px 8px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  perspective: 380px;
+  text-align: left;
+}
+
+.tracker .title {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.tracker .title > span {
+  overflow: hidden;
+  width: 180px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.tracker .time {
+  font-weight: bold;
+  font-variant-numeric: tabular-nums;
+  font-size: 14px;
+}
