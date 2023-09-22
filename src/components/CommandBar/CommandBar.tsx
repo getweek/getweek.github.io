@@ -47,7 +47,7 @@ const GROUPS = [
 
 export const CommandBar = () => {
   const [input, setInput] = useState("");
-  const [selected, setSelected] = useState(0);
+  const [selected, setSelected] = useState(-1);
   const elements = useRef(new Map());
 
   const filtered = GROUPS.map((group) => ({
