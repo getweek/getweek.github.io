@@ -2,391 +2,430 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Features from "../components/Features.astro";
 import apps from "../components/apps.json";
+import Benifits from "../components/Benefits.astro";
 ---
+
 <style>
-	a {
-		color: #028dff;
-		text-decoration: none;
-	}
-	
-	h1 {
-		font-weight: 700;
-		font-size: 36px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 16px;
-	}
+  a {
+    color: #028dff;
+    text-decoration: none;
+  }
 
-	h2 {
-		margin-top: 64px;
-	}
+  h1 {
+    font-weight: 700;
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
 
-	h3 {
-		display: flex;
-		align-items: center;
-		gap: 8px;
-		margin: 0;
-		font-size: 16px;
-		font-weight: 900;
-	}
+  h2 {
+    margin-top: 64px;
+  }
 
-	main {
-		padding: 0 24px;
-	}
-	
-	.screenshots {
-		position: relative;
-		max-width: 1200px;
-		margin: 0 auto;
-	}
+  h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 900;
+  }
 
-	.screen {
-		margin-top: 48px;
-		width: 100%;
-		max-width: 1200px;
-		border: 1px solid #cecece;
-		border-radius: 3px;
-	}
+  main {
+    padding: 0 24px;
+  }
 
-	.task-info {
-		width: 450px;
-		position: absolute;
-		right: 0;
-		bottom: 20px;
-	}
+  body {
+    scroll-snap-align: center;
+  }
 
-	@media(max-width: 700px) {
-		.task-info {
-			display: none;
-		}
-	}
+  .explanation {
+    width: 600px;
+    margin: 0 auto;
+    height: 100vh;
+		font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    scroll-snap-type: y mandatory;
+  }
 
-	.features {
-		width: 90%;
-		max-width: 1200px;
-		margin: 24px auto;
-		display: flex;
-		gap: 16px;
-		flex-wrap: wrap;
-	}
+  .screenshots {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-	.feature {
-		flex: 1 1 300px;
-		border-radius: 4px;
-		text-align: left;
-		border: 1px solid #d8d8d8;
-		box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.09);
-	}
+  .screen {
+    margin-top: 48px;
+    width: 100%;
+    max-width: 1200px;
+    border: 1px solid #cecece;
+    border-radius: 3px;
+  }
 
-	.feature .icon {
-		padding: 4px;
-		border-radius: 4px;
-	}
+  .task-info {
+    width: 450px;
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+  }
 
-	.feature .icon-1 {
-		background-color: #d8ffcb5e;
-		color: #d8ffcb;
-		border: 1px solid rgba(0, 0, 0, 0.1);
-	}
+  @media (max-width: 700px) {
+    .task-info {
+      display: none;
+    }
+  }
 
-	.feature .icon-2 {
-		background-color: #cbfeff5e;
-		border: 1px solid rgba(0, 0, 0, 0.1);
-	}
+  .features {
+    width: 90%;
+    max-width: 1200px;
+    margin: 24px auto;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
 
-	.feature .icon-3 {
-		background-color: #f9ffcb5e;
-		border: 1px solid rgba(0, 0, 0, 0.1);
-	}
+  .feature {
+    flex: 1 1 300px;
+    border-radius: 4px;
+    text-align: left;
+    border: 1px solid #d8d8d8;
+    box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.09);
+  }
 
-	.feature .icon-4 {
-		background-color: #ffcbd35e;
-		border: 1px solid rgba(0, 0, 0, 0.1);
-	}
+  .feature .icon {
+    padding: 4px;
+    border-radius: 4px;
+  }
 
-	.feature .icon-5 {
-		background-color: #f2cbff5e;
-		border: 1px solid rgba(0, 0, 0, 0.1);
-	}
+  .feature .icon-1 {
+    background-color: #d8ffcb5e;
+    color: #d8ffcb;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
 
-	.feature .icon-6 {
-		background-color: #cbdaff5e;
-		border: 1px solid rgba(0, 0, 0, 0.1);
-	}
+  .feature .icon-2 {
+    background-color: #cbfeff5e;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
 
-	.feature p {
-		font-size: 14px;
-	}
+  .feature .icon-3 {
+    background-color: #f9ffcb5e;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
 
-	.background {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 160px;
-	}
+  .feature .icon-4 {
+    background-color: #ffcbd35e;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
 
-	.background-1 {
-		background: #d8ffcb5e;
-	}
+  .feature .icon-5 {
+    background-color: #f2cbff5e;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
 
-	.background-2 {
-		background: #cbfeff5e;
-	}
-	
-	.background-3 {
-		background: #f9ffcb5e;
-	}
-	
-	.background-4 {
-		background: #ffcbd35e;
-	}
-	
-	.background-5 {
-		background: #f2cbff5e;
-	}
-	
-	.background-6 {
-		background: #cbdaff5e;
-	}
+  .feature .icon-6 {
+    background-color: #cbdaff5e;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
 
-	.content {
-		padding: 16px;
-	}
+  .feature p {
+    font-size: 14px;
+  }
 
-	.plans {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		gap: 16px;
-		font-size: 14px;
-	}
+  .background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 160px;
+  }
 
-	.plan {
-		flex: 0 0 250px;
-		border: 1px solid #d8d8d8;
-		background-color: #444;
-		box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.09);
-		border-radius: 4px;
-		color: #fff;
-		transition: all 0.2s ease-in-out;
-	}
+  .background-1 {
+    background: #d8ffcb5e;
+  }
 
-	.plan.plan-pro {
-		background-color: #2196F3;
-	}
+  .background-2 {
+    background: #cbfeff5e;
+  }
 
-	.plan * {
-		color: #fff;
-	}
+  .background-3 {
+    background: #f9ffcb5e;
+  }
 
-	.plan:hover {
-		transform: scale(1.05);
-	}
+  .background-4 {
+    background: #ffcbd35e;
+  }
 
-	.plan h3 {
-		justify-content: center;
-		font-size: 24px;
-		
-		border-bottom: 1px solid #565656;
-		margin-bottom: 24px;
-		color: #fff;
-	}
+  .background-5 {
+    background: #f2cbff5e;
+  }
 
-	.plan.plan-pro h3 {
-		border-bottom: 1px solid #277cc0;
-	}
+  .background-6 {
+    background: #cbdaff5e;
+  }
 
-	.plan h4 {
-		font-size: 36px;
-		position: relative;
-		color: inherit;
-	}
+  .content {
+    padding: 16px;
+  }
 
-	.plan h4 > span {
-		position: absolute;
-		top: 20px;
-		font-size: 16px;
-		opacity: 0.7;
-		color: inherit;
-	}
+  .plans {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    font-size: 14px;
+  }
 
-	.plan ul {
-		text-align: left;
-		margin: 10px 0 20px;
-		padding: 0 16px;
-	}
+  .plan {
+    flex: 0 0 250px;
+    border: 1px solid #d8d8d8;
+    background-color: #444;
+    box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.09);
+    border-radius: 4px;
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+  }
 
-	.plan ul li {
-		display: flex;
-		justify-content: space-between;
-		color: inherit;
-	}
+  .plan.plan-pro {
+    background-color: #2196f3;
+  }
 
-	.plan ul li + li {
-		margin-top: 5px;
-	}
+  .plan * {
+    color: #fff;
+  }
 
-	.plan li > span {
-		display: inline-flex;
-		align-items: center;
-		gap: 8px;
-		color: #fff;
-	}
+  .plan:hover {
+    transform: scale(1.05);
+  }
 
-	.plan li > span:first-child {
-		opacity: 0.8;
-		color: #fff;
-	}
+  .plan h3 {
+    justify-content: center;
+    font-size: 24px;
 
+    border-bottom: 1px solid #565656;
+    margin-bottom: 24px;
+    color: #fff;
+  }
 
-	.plan .details {
-		margin-bottom: 16px;
-		font-weight: 600;
-		color: #fff;
-	}
+  .plan.plan-pro h3 {
+    border-bottom: 1px solid #277cc0;
+  }
 
-	.links {
-		display: flex;
-		justify-content: center;
-		gap: 32px;
-	}
+  .plan h4 {
+    font-size: 36px;
+    position: relative;
+    color: inherit;
+  }
 
-	@media(max-width: 700px) {
-		.links {
-			flex-direction: column;
-		}
-	}
+  .plan h4 > span {
+    position: absolute;
+    top: 20px;
+    font-size: 16px;
+    opacity: 0.7;
+    color: inherit;
+  }
 
-	.link {
-		display: inline-block;
-		padding: 8px 16px;
-		background: #028dff;
-		color: #fff;
-		border-radius: 4px;
-		flex: 0 0 120px;
-		display: flex;
-		align-items: center;
-		justify-content: center	;
-	}
+  .plan ul {
+    text-align: left;
+    margin: 10px 0 20px;
+    padding: 0 16px;
+  }
 
-	footer {
-		font-size: 14px;
-		margin-top: 120px;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin-bottom: 24px;
-		padding: 0 20px;
-	}
+  .plan ul li {
+    display: flex;
+    justify-content: space-between;
+    color: inherit;
+  }
 
+  .plan ul li + li {
+    margin-top: 5px;
+  }
+
+  .plan li > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+  }
+
+  .plan li > span:first-child {
+    opacity: 0.8;
+    color: #fff;
+  }
+
+  .plan .details {
+    margin-bottom: 16px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  @media (max-width: 700px) {
+    .links {
+      flex-direction: column;
+    }
+  }
+
+  .link {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #028dff;
+    color: #fff;
+    border-radius: 4px;
+    flex: 0 0 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  footer {
+    font-size: 14px;
+    margin-top: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding: 0 20px;
+  }
 </style>
 
 <BaseLayout>
-	<main>
-		<h2>Task management tool<br /> with a heavy focus on planning</h2>
-		<section class="screenshots">
-			<img class="screen" src="/main-screen.png" />
-			<img class="task-info" src="/task-info.png" />
-		</section>
-		<Features />
-		
-		<h2>Plans</h2>
-		<section class="plans">
-			<div class="plan">
-				<h3>Free</h3>
-				<h4>$0<span>/mo</span></h4>
-				<ul>
-					<li>
-						<span>
-							<img src="/icons/folder.svg" width="16" height="16" />
-							<span>Projects:</span>
-						</span>
-						<span>up to 9</span>
-					</li>
-					<li>
-						<span>
-							<img src="/icons/tags.svg" width="16" height="16" />
-							<span>Tags:</span>
-						</span>
-						<span>up to 9</span>
-					</li>
-					<li>
-						<span>
-							<img src="/icons/persons.svg" width="16" height="16" />
-							<span>Accounts:</span>
-						</span>
-						<span>1</span>
-					</li>
-					<li>
-						<span>
-							<img src="/icons/tasks.svg" width="16" height="16" />
-							<span>Tasks:</span>
-						</span>
-						<span>∞</span>
-					</li>
-					<li>
-						<span>
-							<img src="/icons/stats.svg" width="16" height="16" />
-							<span>Statistics:</span>
-						</span>
-						<span>Basic</span>
-					</li>
-				</ul>
-				<div class="details">
-					<em>Free forever!</em>
-				</div>		
-			</div>
-			<div class="plan plan-pro">
-				<h3>Pro</h3>
-				<h4>$8<span>/mo</span></h4>
-				<ul>
-					<li>
-						<span>
-							<img src="/icons/folder.svg" width="16" height="16" />
-							<span>Projects:</span>
-						</span>
-						<span>∞</span>
-					</li>
-					<li>
-						<span>
-							<img src="/icons/tags.svg" width="16" height="16" />
-							<span>Tags:</span>
-						</span>
-						<span>∞</span>
-					</li>
-					<li>
-						<span>
-							<img src="/icons/persons.svg" width="16" height="16" />
-							<span>Accounts:</span>
-						</span>
-						<span>up to 3</span>
-					</li>
-					<li>
-						<span>
-							<img src="/icons/tasks.svg" width="16" height="16" />
-							<span>Tasks:</span>
-						</span>
-						<span>∞</span>
-					</li>
-					<li>
-						<span>
-							<img src="/icons/stats.svg" width="16" height="16" />
-							<span>Statistics:</span>
-						</span>
-						<span>Advanced</span>
-					</li>
-				</ul>	
-				<div class="details">
-					<em>Coming soon!</em>
-				</div>		
-			</div>
-		</section>
-		<h2>Links</h2>
-		<section class="links">
-			<a class="link" href="https://app.getweek.pro">Web</a>
-			<a class="link" href={`https://github.com/getweek/app/releases/download/v${apps.version}/Week-${apps.version}.dmg`}>Mac<br/>(Intel)</a>
-			<a class="link" href={`https://github.com/getweek/app/releases/download/v${apps.version}/Week-${apps.version}-arm64.dmg`}>Mac<br/>(Apple Silicon)</a>
-		</section>
-	</main>
+  <main>
+    <h2>
+      We can’t get back the wasted time.<br /> But we can help you
+      waste less.
+    </h2>
+    <section class="screenshots">
+      <img class="screen" src="/main-screen.png" />
+      <img class="task-info" src="/task-info.png" />
+    </section>
+    <section class="explanation">
+      <p>
+        Week is a personal task management tool combined with a calendar. It
+        helps you to plan your schedule and track the time you spend on your
+        tasks.
+      </p>
+      <p>
+        We took the time to think about the best way to do this and came up with
+        a few ideas:
+      </p>
+    </section>
+		<Benifits />
+    <Features />
+
+    <h2>Plans</h2>
+    <section class="plans">
+      <div class="plan">
+        <h3>Free</h3>
+        <h4>$0<span>/mo</span></h4>
+        <ul>
+          <li>
+            <span>
+              <img src="/icons/folder.svg" width="16" height="16" />
+              <span>Projects:</span>
+            </span>
+            <span>up to 9</span>
+          </li>
+          <li>
+            <span>
+              <img src="/icons/tags.svg" width="16" height="16" />
+              <span>Tags:</span>
+            </span>
+            <span>up to 9</span>
+          </li>
+          <li>
+            <span>
+              <img src="/icons/persons.svg" width="16" height="16" />
+              <span>Accounts:</span>
+            </span>
+            <span>1</span>
+          </li>
+          <li>
+            <span>
+              <img src="/icons/tasks.svg" width="16" height="16" />
+              <span>Tasks:</span>
+            </span>
+            <span>∞</span>
+          </li>
+          <li>
+            <span>
+              <img src="/icons/stats.svg" width="16" height="16" />
+              <span>Statistics:</span>
+            </span>
+            <span>Basic</span>
+          </li>
+        </ul>
+        <div class="details">
+          <em>Free forever!</em>
+        </div>
+      </div>
+      <div class="plan plan-pro">
+        <h3>Pro</h3>
+        <h4>$8<span>/mo</span></h4>
+        <ul>
+          <li>
+            <span>
+              <img src="/icons/folder.svg" width="16" height="16" />
+              <span>Projects:</span>
+            </span>
+            <span>∞</span>
+          </li>
+          <li>
+            <span>
+              <img src="/icons/tags.svg" width="16" height="16" />
+              <span>Tags:</span>
+            </span>
+            <span>∞</span>
+          </li>
+          <li>
+            <span>
+              <img src="/icons/persons.svg" width="16" height="16" />
+              <span>Accounts:</span>
+            </span>
+            <span>up to 3</span>
+          </li>
+          <li>
+            <span>
+              <img src="/icons/tasks.svg" width="16" height="16" />
+              <span>Tasks:</span>
+            </span>
+            <span>∞</span>
+          </li>
+          <li>
+            <span>
+              <img src="/icons/stats.svg" width="16" height="16" />
+              <span>Statistics:</span>
+            </span>
+            <span>Advanced</span>
+          </li>
+        </ul>
+        <div class="details">
+          <em>Coming soon!</em>
+        </div>
+      </div>
+    </section>
+    <h2>Links</h2>
+    <section class="links">
+      <a class="link" href="https://app.getweek.pro">Web</a>
+      <a
+        class="link"
+        href={`https://github.com/getweek/app/releases/download/v${apps.version}/Week-${apps.version}.dmg`}
+        >Mac<br />(Intel)</a
+      >
+      <a
+        class="link"
+        href={`https://github.com/getweek/app/releases/download/v${apps.version}/Week-${apps.version}-arm64.dmg`}
+        >Mac<br />(Apple Silicon)</a
+      >
+    </section>
+  </main>
 </BaseLayout>

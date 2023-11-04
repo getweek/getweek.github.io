@@ -1,0 +1,104 @@
+---
+import { Calendar } from "./Calendar/Calendar";
+import { Note } from "./Note/Note";
+import { Regions } from "./Regions/Regions";
+import { Statistics } from "./Statistics/Statistics";
+---
+
+<style>
+  .benefit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    gap: 16px;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+  }
+
+  .benefit:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+
+  .description {
+    flex: 1 0;
+    text-align: left;
+    padding: 0 64px;
+    font-size: 18px;
+  }
+
+  .view {
+    flex: 2 0;
+    background-color: #fdfdfd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .benefit {
+      flex-direction: column;
+    }
+
+    .benefit:nth-child(odd) {
+      flex-direction: column;
+    }
+
+    .description {
+      padding: 0 32px;
+      text-align: center;
+    }
+
+    .view {
+      width: 100%;
+    }
+  }
+</style>
+
+<section class="benefit">
+  <div class="description">
+    <h2>Multiple time slots</h2>
+     You can’t always complete a task in one go; sometimes you need to take a
+    break or switch to a more important activity. In Week each task can be
+    planned multiple times - as many as you want.
+  </div>
+  <div class="view">
+    <Calendar client:visible />
+  </div>
+</section>
+<section class="benefit">
+  <div class="description">
+    <h2>Time boxes</h2>
+     Sometimes, you plan to work on a project, but you don't know which specific
+    tasks you're going to do. In Week, you can allocate a time box for an
+    activity and fill it with tasks later automatically or manually.
+  </div>
+  <div class="view">
+    <Regions client:visible />
+  </div>
+</section>
+<section class="benefit">
+  <div class="description">
+    <h2>Rich notes</h2>
+     Each task can have a context that you don't want to lose. You can save
+    useful information inside the task's notes. Store links, text, and subtasks,
+    and return to them later.
+  </div>
+  <div class="view">
+    <Note client:visible />
+  </div>
+</section>
+<section class="benefit">
+  <div class="description">
+    <h2>Statistics</h2>
+     We rely heavily on statistics because it help us obtain useful information
+    about the time we spend. Week provides a variety of statistics that will
+    help you understand how productive you are.
+  </div>
+  <div class="view">
+    <Statistics client:visible />
+  </div>
+</section>

@@ -18,15 +18,35 @@
 
 .event {
   position: absolute;
-  padding: 8px 12px;
+  padding: 4px 4px;
   box-sizing: border-box;
-  left: 100px;
-  top: 60px;
   width: 200px;
-  height: 110px;
-  background-color: #F3E5F5;
-  color: #7B1FA2;
-  font-size: 14px;
+  font-size: 13px;
   border-radius: 3px;
   text-align: left;
+  overflow: hidden;
+}
+
+.event1 {
+  left: 100px;
+  top: 0;
+  height: 58px;
+  background-color: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.event2 {
+  left: 100px;
+  top: 60px;
+  height: 108px;
+  background-color: #cde7ff;
+  color: #4686c3;
+}
+
+.event3 {
+  left: 100px;
+  top: 170px;
+  height: 60px;
+  background-color: #f3e5f5;
+  color: #7b1fa2;
 }

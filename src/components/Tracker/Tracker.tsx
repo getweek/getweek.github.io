@@ -27,7 +27,7 @@ export const Tracker = () => {
       <div className={styles.tracker}>
         <div className={styles.title}>
           <img src="/tracker-stop.svg" />
-          <span>Consider using Week</span>
+          <span>Start using Week</span>
         </div>
         <span className={styles.time}>{time}</span>
       </div>

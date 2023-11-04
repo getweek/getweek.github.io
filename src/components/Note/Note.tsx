@@ -1,11 +1,56 @@
-import React from 'react';
-import type { ReactNode } from 'react';
-import { Checkbox } from '../Checkbox/Checkbox';
-import { DonutChart } from '../DonutChart/DonutChart';
-import styles from './Note.module.css';
-import { TaskStatus } from '../TaskStatus/TaskStatus';
+import React from "react";
+import type { ReactNode } from "react";
+import {
+  animated,
+  useChain,
+  useSpring,
+  useSpringRef,
+  useSprings,
+  useTrail,
+  useTransition,
+} from "@react-spring/web";
+import { DonutChart } from "../DonutChart/DonutChart";
+import { TaskStatus } from "../TaskStatus/TaskStatus";
+import styles from "./Note.module.css";
+
+const noteMessage = `Need to prepare new Grafana dashboard by the end of this week. It 
+should display Web Vitals metrics and overall score.`;
+
+const text = [...noteMessage];
 
 export const Note = () => {
+  const trailsRef = useSpringRef();
+  const spring1Ref = useSpringRef();
+  const spring2Ref = useSpringRef();
+  const spring3Ref = useSpringRef();
+
+  const trail = useTrail(noteMessage.length, {
+    ref: trailsRef,
+    from: { opacity: 0, transform: "scale(1.1)" },
+    to: { opacity: 1, transform: "scale(1)" },
+    config: { duration: 5000 / text.length },
+  });
+
+  const spring1 = useSpring({
+    from: { opacity: 0, transform: "translateY(-2px)" },
+    to: { opacity: 1, transform: "translateY(0)" },
+    ref: spring1Ref,
+  });
+
+  const spring2 = useSpring({
+    from: { opacity: 0, transform: "translateY(-2px)" },
+    to: { opacity: 1, transform: "translateY(0)" },
+    ref: spring2Ref,
+  });
+
+  const spring3 = useSpring({
+    from: { opacity: 0, transform: "translateY(-2px)" },
+    to: { opacity: 1, transform: "translateY(0)" },
+    ref: spring3Ref,
+  });
+
+  useChain([trailsRef, spring1Ref, spring2Ref, spring3Ref]);
+
   return (
     <div className={styles.root}>
       <header className={styles.header}>
@@ -25,34 +70,45 @@ export const Note = () => {
         </div>
       </header>
       <div className={styles.content}>
-        <p>
-          Need to prepare new Grafana dashboard by the end of this week. It 
-should display Web Vitals metrics and overall score.
+        <p className={styles.message}>
+          {trail.map((props, index) => (
+            <animated.span key={index} style={props}>
+              {text[index]}
+            </animated.span>
+          ))}
         </p>
         <ul className={styles.tasks}>
-          <Task status="completed">Request permissions to edit dashboards</Task>
-          <Task status="inProgress">Create a dashboard from template</Task>
+          <animated.div style={spring1}>
+            <Task status="completed">
+              Request permissions to edit dashboards
+            </Task>
+          </animated.div>
+          <animated.div style={spring2}>
+            <Task status="inProgress">Create a dashboard from template</Task>
+          </animated.div>
         </ul>
-        <p>
+        <animated.p style={spring3}>
           <a href="https://web.dev/vitals/" target="_blank">
             Web Vitals documentation
           </a>
-        </p>
+        </animated.p>
       </div>
     </div>
-  )
-}
+  );
+};
 
 type TaskProps = {
   children: ReactNode;
   status: string;
-}
+};
 
-const Task = ({children, status}: TaskProps) => {
+const Task = ({ children, status }: TaskProps) => {
   return (
     <div className={styles.task}>
-      <TaskStatus status={status}  />
-      <span className={`${status === 'completed' ? styles.completed : ''}`}>{children}</span>
+      <TaskStatus status={status} />
+      <span className={`${status === "completed" ? styles.completed : ""}`}>
+        {children}
+      </span>
     </div>
-  )
-}
+  );
+};

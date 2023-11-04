@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Statistics.module.css';
+import { animated, useTrail } from '@react-spring/web';
 
 const projects = {
   home: { title: 'Home', color: '#E1F3BC' },
@@ -97,16 +98,25 @@ const data = [
 ]
 
 export const Statistics = () => {
+
+  const trails = useTrail(data.length, {
+    from: { transform: 'scaleY(0%)' },
+    to: { transform: 'scaleY(100%)' },
+  })
+  
   return (
     <div className={styles.root}>
       {
-        data.map((data) => (
-          <div key={data.date.date} className={styles.day}>
-            <div className={styles.lines}>
-              <div className={styles.prev} style={{height: `${data.prev}%`}} />
+        trails.map((style, index) => {
+          const item = data[index];
+
+          return (
+            <div key={item.date.date} className={styles.day}>
+            <animated.div style={style} className={styles.lines}>
+              <div className={styles.prev} style={{height: `${item.prev}%`}} />
               <div className={styles.current}>
                 {
-                  data.current.map(data => (
+                  item.current.map(data => (
                     <div 
                       key={data.project.title}
                       className={styles.currentLine}
@@ -118,17 +128,18 @@ export const Statistics = () => {
                   ))
                 }
               </div>
-            </div>
+            </animated.div>
             <div className={styles.date}>
-              <div className={`${styles.dayName} ${data.date.isWeekend ? styles.dayNameWeekend : ''}`} >
-                {data.date.day}
+              <div className={`${styles.dayName} ${item.date.isWeekend ? styles.dayNameWeekend : ''}`} >
+                {item.date.day}
               </div>
               <div className={styles.dayNumber}>
-                {data.date.date}
+                {item.date.date}
               </div>
             </div>
           </div>
-        ))
+          )
+        })
       }
     </div>
   )
