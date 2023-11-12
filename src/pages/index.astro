@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Features from "../components/Features.astro";
 import apps from "../components/apps.json";
 import Benifits from "../components/Benefits.astro";
+import Benefits2 from "../components/Benefits2.astro";
 ---
 
 <style>
@@ -41,18 +42,6 @@ import Benifits from "../components/Benefits.astro";
     scroll-snap-align: center;
   }
 
-  .explanation {
-    width: 600px;
-    margin: 0 auto;
-    height: 100vh;
-		font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    scroll-snap-type: y mandatory;
-  }
-
   .screenshots {
     position: relative;
     max-width: 1200px;
@@ -80,6 +69,19 @@ import Benifits from "../components/Benefits.astro";
     }
   }
 
+  .benefits {
+    max-width: 1200px;
+    /* padding-top: 128px; */
+    height: 500px;
+    margin: 0 auto 128px;
+  }
+
+  .benefits h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 64px;
+  }
+  
   .features {
     width: 90%;
     max-width: 1200px;
@@ -301,25 +303,16 @@ import Benifits from "../components/Benefits.astro";
 <BaseLayout>
   <main>
     <h2>
-      We can’t get back the wasted time.<br /> But we can help you
-      waste less.
+      We can’t get back the wasted time.<br /> But we can help you waste less.
     </h2>
     <section class="screenshots">
       <img class="screen" src="/main-screen.png" />
       <img class="task-info" src="/task-info.png" />
     </section>
-    <section class="explanation">
-      <p>
-        Week is a personal task management tool combined with a calendar. It
-        helps you to plan your schedule and track the time you spend on your
-        tasks.
-      </p>
-      <p>
-        We took the time to think about the best way to do this and came up with
-        a few ideas:
-      </p>
-    </section>
-		<Benifits />
+    <div class="benefits">
+      <h2>We now few things about productivity:</h2>
+      <Benefits2 />
+    </div>
     <Features />
 
     <h2>Plans</h2>

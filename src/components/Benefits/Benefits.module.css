@@ -1,0 +1,31 @@
+.root {
+  display: flex;
+  gap: 64px;
+  height: 100%;
+}
+
+.content {
+  flex: 1;
+}
+
+.demoScreen {
+  position: relative;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #F9F9F9;
+  border: 1px solid #dedede;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.demo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex: 1 0 100%;
+  position: absolute;
+  inset: 0;
+}
