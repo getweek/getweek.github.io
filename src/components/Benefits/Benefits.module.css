@@ -29,3 +29,14 @@
   position: absolute;
   inset: 0;
 }
+
+@media screen and (max-width: 768px) {
+  .root {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .demoScreen {
+    display: none;
+  }
+}

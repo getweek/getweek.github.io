@@ -42,6 +42,7 @@ type AccordionProps = {
   items: {
     title: string;
     content: ReactNode;
+    demo: ReactNode;
   }[];
 };
 
@@ -58,6 +59,9 @@ export const Accordion = (props: AccordionProps) => {
           onOpen={() => onIndexChange(i)}
         >
           {item.content}
+          <div>
+            {item.demo}
+          </div>
         </AccordionItem>
       ))}
     </div>
