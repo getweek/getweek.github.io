@@ -21,6 +21,13 @@
   padding: 0;
 }
 
+@media screen and (min-width: 769px) {
+  .demo {
+    display: none;
+  }
+}
+
+
 h3 {
   
 }

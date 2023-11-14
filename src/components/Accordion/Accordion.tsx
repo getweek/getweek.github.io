@@ -59,7 +59,7 @@ export const Accordion = (props: AccordionProps) => {
           onOpen={() => onIndexChange(i)}
         >
           {item.content}
-          <div>
+          <div className={styles.demo}>
             {item.demo}
           </div>
         </AccordionItem>
