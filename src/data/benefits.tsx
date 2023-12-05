@@ -21,8 +21,7 @@ export const benefits = [
       "Sometimes it’s hard to know which tasks you’re going to do tomorrow",
     content: (
       <p>
-        Future is almost always unclear. You can only assume which activities
-        will take place tomorrow or in a week. In Week you can plan not only
+        In Week you can plan not only
         tasks, but placeholders for them. We call them “time boxes”. You can
         create time boxes for projects and we will help you to fill them with
         tasks automatically when the time comes.
