@@ -4,6 +4,7 @@ import { animated, useSpring, useSpringRef, useChain } from "@react-spring/web";
 import styled from "styled-components";
 
 export const Demo = () => {
+  const [key, setKey] = React.useState(0);
   const firstRef = useSpringRef();
   const secondRef = useSpringRef();
   const thirdRef = useSpringRef();
@@ -15,7 +16,7 @@ export const Demo = () => {
     delay: 1000,
     config: { duration: 1000 },
   });
-  
+
   const heading2Styles = useSpring({
     ref: secondRef,
     from: { opacity: 0, transform: "translate3d(0, -40px, 0)" },
@@ -23,15 +24,15 @@ export const Demo = () => {
     delay: 2500,
     config: { duration: 1000 },
   });
-  
+
   const heading3Styles = useSpring({
     ref: thirdRef,
-    from: { opacity: 0, transform: "translate3d(0, -40px, 0)" },
-    to: { opacity: 1, transform: "translate3d(0, 0, 0)" },
+    from: { opacity: 0, scale: 0.95 },
+    to: { opacity: 1, scale: 1 },
     delay: 2000,
-    config: { duration: 1000 },
+    config: { duration: 700 },
   });
-  
+
   useChain([firstRef, secondRef, thirdRef]);
 
   return (
@@ -42,11 +43,13 @@ export const Demo = () => {
       <Heading2 style={heading2Styles}>
         But we can help you waste less.
       </Heading2>
-      <Info style={heading3Styles}>
-        <strong>Week</strong> is a calendar and task manager app
-        <br /> for individuals who aspire to accomplish more.
+      <animated.div style={heading3Styles}>
+        <Info>
+          <strong>Week</strong> is a calendar and task manager app
+          <br /> for individuals who aspire to accomplish more.
+        </Info>
         <App />
-      </Info>
+      </animated.div>
     </div>
   );
 };

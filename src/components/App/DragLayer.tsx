@@ -79,7 +79,7 @@ export const DragLayer = (
         duration = defaultDuration;
       }
     }
-  } else if (type === "TASK_BLOCK") {
+  } else if (type === TASK) {
     duration = event.duration || defaultDuration;
   }
 
