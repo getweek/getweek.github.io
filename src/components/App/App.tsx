@@ -419,10 +419,14 @@ const App = () => {
             {event.data.task?.title}
           </Title>
           <div>
-            {format((dates.startDateTime || event.startDateTime)!, "HH:mm")}
-            {" - "}
-            {format((dates.endDateTime || event.endDateTime)!, "HH:mm")} (
-            {`${d} ${h} ${m}`.trim()})
+            {event.startDateTime && event.endDateTime && (
+              <>
+                {format((dates.startDateTime || event.startDateTime)!, "HH:mm")}
+                {" - "}
+                {format((dates.endDateTime || event.endDateTime)!, "HH:mm")} (
+                {`${d} ${h} ${m}`.trim()})
+              </>
+            )}
           </div>
         </EventBlock>
       );

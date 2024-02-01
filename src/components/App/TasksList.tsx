@@ -4,6 +4,7 @@ import { Text } from "../Text";
 import { Status, type TProject, type TTask } from "./types";
 import { TaskStatus } from "../TaskStatus/TaskStatus";
 import CaseImg from "../../../public/emoji/case.png";
+import ManImg from '../../../public/emoji/man.png';
 import { useDrag } from "react-dnd";
 import { getEmptyImage } from "react-dnd-html5-backend";
 import { TASK } from "./DragLayer";
@@ -36,7 +37,7 @@ export const TasksList = (props: TasksListProps) => {
           <Group
             key={key}
             title={key}
-            icon={CaseImg.src}
+            icon={key === "Work" ? CaseImg.src : ManImg.src}
             tasks={value}
             projects={props.projects}
           />
