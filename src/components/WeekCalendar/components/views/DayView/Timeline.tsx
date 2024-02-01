@@ -83,17 +83,6 @@ const NowLine = styled.div<{ position: number; time: string }>`
   left: 0;
   right: 0;
   z-index: 5;
-
-  &:before {
-    content: '${(p) => p.time}';
-    font-size: 12px;
-    transform: translateY(-50%) translateY(-4px) translateX(-10px) translateX(-100%);
-    display: inline-block;
-    color: #fff;
-    background: ${(p) => p.theme.weekendTextColor};
-    padding: 0 2px;
-    border-radius: 3px;
-  }
 `;
 
 const NowDayLine = styled.div<{ top: number; width: number; }>`
@@ -108,6 +97,7 @@ const NowDayLine = styled.div<{ top: number; width: number; }>`
   &:before {
     position: absolute;
     content: '';
+    left: 0;
     height: 8px;
     width: 8px;
     border-radius: 50%;
