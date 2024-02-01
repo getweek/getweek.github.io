@@ -1,6 +1,11 @@
-import React, { useRef, type ReactNode, useLayoutEffect, useState } from "react";
+import React, {
+  useRef,
+  type ReactNode,
+  useLayoutEffect,
+  useState,
+} from "react";
 import { animated, useSpring, useTransition } from "@react-spring/web";
-import useMeasure from 'react-use-measure';
+import useMeasure from "react-use-measure";
 import cn from "classnames";
 import styles from "./Accordion.module.css";
 
@@ -27,7 +32,14 @@ export const AccordionItem = (props: Props) => {
       })}
     >
       <h3 className={styles.title} onClick={onOpen}>
-        {title}
+        <span
+          className={cn(styles.icon, {
+            [styles.open]: open,
+          })}
+        >
+          <img src="/icons/triangle-down.svg" width={8} height={8} />
+        </span>{" "}
+        <span>{title}</span>
       </h3>
       <animated.div style={style} className={styles.content}>
         <div ref={ref}>{children}</div>
@@ -59,9 +71,7 @@ export const Accordion = (props: AccordionProps) => {
           onOpen={() => onIndexChange(i)}
         >
           {item.content}
-          <div className={styles.demo}>
-            {item.demo}
-          </div>
+          <div className={styles.demo}>{item.demo}</div>
         </AccordionItem>
       ))}
     </div>

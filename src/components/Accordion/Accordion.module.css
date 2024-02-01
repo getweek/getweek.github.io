@@ -21,6 +21,16 @@
   padding: 0;
 }
 
+.icon {
+  display: inline-flex;
+  vertical-align: middle;
+  transition: transform 0.3s ease-in-out;
+}
+
+.icon.open {
+  transform: rotate(180deg);
+}
+
 @media screen and (min-width: 769px) {
   .demo {
     display: none;

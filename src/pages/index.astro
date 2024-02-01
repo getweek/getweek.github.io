@@ -1,12 +1,16 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Features from "../components/Features.astro";
-import apps from "../components/apps.json";
-import Benifits from "../components/Benefits.astro";
+import { App } from "../components/App";
+import { Demo } from "../components/Demo/Demo";
 import Benefits2 from "../components/Benefits2.astro";
+import apps from "../components/apps.json";
 ---
 
 <style>
+  * {
+    box-sizing: border-box;
+  }
   a {
     color: #028dff;
     text-decoration: none;
@@ -22,16 +26,21 @@ import Benefits2 from "../components/Benefits2.astro";
   }
 
   h2 {
+    text-align: center;
     margin-top: 64px;
   }
 
   h3 {
-    display: flex;
-    align-items: center;
     gap: 8px;
-    margin: 0;
+    margin: 0 auto;
     font-size: 16px;
-    font-weight: 900;
+    font-weight: normal;
+    text-align: center;
+    color: #555;
+
+    & > * {
+      color: #555;
+    }
   }
 
   main {
@@ -40,6 +49,10 @@ import Benefits2 from "../components/Benefits2.astro";
 
   body {
     scroll-snap-align: center;
+  }
+
+  .demo {
+    height: 800px;
   }
 
   .screenshots {
@@ -81,13 +94,12 @@ import Benefits2 from "../components/Benefits2.astro";
     text-align: center;
     margin-bottom: 64px;
   }
-  
+
   @media screen and (max-width: 768px) {
     .benefits {
       height: auto;
       margin-bottom: 0px;
     }
-    
   }
   .features {
     width: 90%;
@@ -184,6 +196,7 @@ import Benefits2 from "../components/Benefits2.astro";
   .plans {
     display: flex;
     flex-wrap: wrap;
+    text-align: center;
     justify-content: center;
     gap: 16px;
     font-size: 14px;
@@ -276,6 +289,7 @@ import Benefits2 from "../components/Benefits2.astro";
     display: flex;
     justify-content: center;
     gap: 32px;
+    text-align: center;
   }
 
   @media (max-width: 700px) {
@@ -290,7 +304,7 @@ import Benefits2 from "../components/Benefits2.astro";
     background: #028dff;
     color: #fff;
     border-radius: 4px;
-    flex: 0 0 120px;
+    flex: 0 0 140px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -309,13 +323,9 @@ import Benefits2 from "../components/Benefits2.astro";
 
 <BaseLayout>
   <main>
-    <h2>
-      We can’t get back the wasted time.<br /> But we can help you waste less.
-    </h2>
-    <section class="screenshots">
-      <img class="screen" src="/main-screen.png" />
-      <img class="task-info" src="/task-info.png" />
-    </section>
+    <div class="demo">
+      <Demo client:only />
+    </div>
     <div class="benefits">
       <h2>We know few things about productivity</h2>
       <Benefits2 />

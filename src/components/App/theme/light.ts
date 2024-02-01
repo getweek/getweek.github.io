@@ -1,0 +1,18 @@
+export const light = {
+  backgroundColor: "#fafafa",
+  textColor: "#444",
+  textColor2: "#626362",
+  altTextColor: "#fff",
+  mutedColor: "#888",
+  primaryColor: "#03a9f4",
+  successColor: "#00aa00",
+  dangerColor: "#e00",
+  warningColor: "#ee8a00",
+  contentBackgroundColor: "#fff",
+  borderColor: "#eee",
+  inputBorderColor: "#bbb",
+  selectedBackgroundColor: "#e1f5fe",
+  eventBackgroundColor: "#e1f5fe",
+  eventColor: "#047ad8",
+  shadow: "0 0 2px rgb(0 0 0 / 60%)",
+};

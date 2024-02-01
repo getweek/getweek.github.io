@@ -12,6 +12,7 @@ import {
 import { DonutChart } from "../DonutChart/DonutChart";
 import { TaskStatus } from "../TaskStatus/TaskStatus";
 import styles from "./Note.module.css";
+import { Status } from "../App/types";
 
 const noteMessage = `Need to prepare new Grafana dashboard by the end of this week. It 
 should display Web Vitals metrics and overall score.`;
@@ -54,7 +55,7 @@ export const Note = () => {
   return (
     <div className={styles.root}>
       <header className={styles.header}>
-        <TaskStatus status="inProgress" />
+        <TaskStatus status={Status.IN_PROGRESS} />
         <span className={styles.title}>Prepare dashboard for metrics</span>
         <span />
         <div className={styles.info}>
