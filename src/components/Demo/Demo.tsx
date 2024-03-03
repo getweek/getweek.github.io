@@ -21,7 +21,7 @@ export const Demo = () => {
     ref: secondRef,
     from: { opacity: 0, transform: "translate3d(0, -40px, 0)" },
     to: { opacity: 1, transform: "translate3d(0, 0, 0)" },
-    delay: 2500,
+    delay: 1500,
     config: { duration: 1000 },
   });
 
@@ -29,7 +29,7 @@ export const Demo = () => {
     ref: thirdRef,
     from: { opacity: 0, scale: 0.95 },
     to: { opacity: 1, scale: 1 },
-    delay: 2000,
+    delay: 1500,
     config: { duration: 700 },
   });
 
